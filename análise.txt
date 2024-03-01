@@ -1,0 +1,39 @@
+1)
+
+Gravidade
+   -> Posição
+   -> Velocidade
+
+Entrada:
+   -> Altura inicial do objeto   
+   -> Aceleração da gravidade (constante)
+   -> Intervalo de tempo (1 metro)
+
+Resposta:
+   -> Velocidade de queda *
+   -> Posição em tempos específicos
+   
+
+v = g.t
+
+g=Aceleração da gravidade
+t=Intervalo de tempo
+v=Velocidade de queda
+
+h= gt²/2
+
+h=altura do corpo em movimento
+
+-> Refatorar
+-> Testes unitários
+
+2)
+
+Entrada:
+   -> Ângulo em relação ao solo
+   -> Velocidade
+
+Resposta:
+   -> Velocidade   
+   -> Posição em tempos específicos 
+   
