@@ -1,0 +1,18 @@
+
+v
+java:S1192"TDefine a constant instead of duplicating this literal "%.2f | %.2f | %.2f
+" 3 times.(Ãìçëùÿÿÿÿ8¹µ¹ªà1
+G	java:S106"+Replace this use of System.out by a logger.(ß¿8¨Êˆªà1
+s
+java:S3457"Q%n should be used in place of \n to produce the platform-specific line separator.(Ãìçëùÿÿÿÿ8Õµ¹ªà1
+L	java:S106"+Replace this use of System.out by a logger.(Ãìçëùÿÿÿÿ8¨Êˆªà1
+s
+java:S3457$"Q%n should be used in place of \n to produce the platform-specific line separator.(Ãìçëùÿÿÿÿ8Öµ¹ªà1
+L	java:S106$"+Replace this use of System.out by a logger.(Ãìçëùÿÿÿÿ8©Êˆªà1
+m
+java:S3457&"Q%n should be used in place of \n to produce the platform-specific line separator.(ÒÆ^8Öµ¹ªà1
+F	java:S106&"+Replace this use of System.out by a logger.(ÒÆ^8©Êˆªà1
+G	java:S106="+Replace this use of System.out by a logger.(Æ¡æ‹8Øµ¹ªà1
+G	java:S106@"+Replace this use of System.out by a logger.(‘ı¶©8Øµ¹ªà1
+G	java:S106K"+Replace this use of System.out by a logger.(µòÆ8Ùµ¹ªà1
+G	java:S106N"+Replace this use of System.out by a logger.(‘ı¶©8Ùµ¹ªà1
