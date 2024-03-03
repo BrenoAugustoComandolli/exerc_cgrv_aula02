@@ -1,10 +1,12 @@
 package br.com.exercicio;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class QuedaLivre {
 
-    private static final double AC_GRAVIDADE = 9.81;
+    public static final double AC_GRAVIDADE = 9.81;
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -12,17 +14,19 @@ public class QuedaLivre {
         double alturaInicial = getAlturaInicial(scanner);
         double intervaloTempo = getIntervaloTempo(scanner);
 
-        calculaPosicaoVelocidadeQueda(intervaloTempo, alturaInicial);
+        List<EstadoQueda> lEstado = calculaPosicaoVelocidadeQueda(intervaloTempo, alturaInicial);
+        exibeResultadosQuedaLivre(lEstado);
         scanner.close();
     }
 
-    private static void calculaPosicaoVelocidadeQueda(double intervaloTempo, double alturaInicial) {
+    public static List<EstadoQueda> calculaPosicaoVelocidadeQueda(double intervaloTempo, double alturaInicial) {
+        List<EstadoQueda> estados = new ArrayList<>();
+
         double alturaAtual = alturaInicial;
         double tempo = 0;
         double velocidade = 0;
 
-        System.out.println("Tempo (segundos) | Altura (metros) | Velocidade (metros/segundos)");
-        System.out.printf("%.2f | %.2f | %.2f\n", tempo, alturaAtual, velocidade);
+        estados.add(new EstadoQueda(tempo, alturaAtual, velocidade));
 
         while (alturaAtual > 0) {
             tempo += intervaloTempo;
@@ -33,23 +37,24 @@ public class QuedaLivre {
                 tempo = calculaTempoTotalQueda(alturaInicial);
                 alturaAtual = 0;
                 velocidade = calculaVelocidadeConformeTempo(tempo);
-                System.out.printf("%.2f | %.2f | %.2f\n", tempo, alturaAtual, velocidade);
+                estados.add(new EstadoQueda(tempo, alturaAtual, velocidade));
             } else {
-                System.out.printf("%.2f | %.2f | %.2f\n", tempo, proximaAltura, velocidade);
+                estados.add(new EstadoQueda(tempo, proximaAltura, velocidade));
                 alturaAtual = proximaAltura;
             }
         }
+        return estados;
     }
 
-    private static double calculaAlturaConformeTempo(double tempo) {
+    public static double calculaAlturaConformeTempo(double tempo) {
         return (AC_GRAVIDADE * Math.pow(tempo, 2)) / 2;
     }
 
-    private static double calculaVelocidadeConformeTempo(double tempo) {
+    public static double calculaVelocidadeConformeTempo(double tempo) {
         return AC_GRAVIDADE * tempo;
     }
 
-    private static double calculaTempoTotalQueda(double alturaInicial) {
+    public static double calculaTempoTotalQueda(double alturaInicial) {
         return Math.sqrt((2 * alturaInicial) / AC_GRAVIDADE);
     }
 
@@ -79,6 +84,13 @@ public class QuedaLivre {
             }
         }
         return alturaInicial;
+    }
+
+    private static void exibeResultadosQuedaLivre(List<EstadoQueda> estados) {
+        System.out.println("Tempo (segundos) | Altura (metros) | Velocidade (metros/segundos)");
+        for (EstadoQueda estado : estados) {
+            System.out.printf("%.2f | %.2f | %.2f\n", estado.getTempo(), estado.getAltura(), estado.getVelocidade());
+        }
     }
 
 }
