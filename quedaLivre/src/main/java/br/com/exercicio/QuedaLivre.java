@@ -66,6 +66,7 @@ public class QuedaLivre {
                 System.out.print("Digite o intervalo de tempo para as atualizações da queda (em segundos): ");
                 intervaloTempo = scanner.nextDouble();
             }catch (Exception e) {
+                scanner.next();
                 System.out.println("Valor inválido, digite um valor válido.");
             }
         }
@@ -80,6 +81,7 @@ public class QuedaLivre {
                 System.out.print("Digite a altura inicial (este valor é em metros): ");
                 alturaInicial = scanner.nextDouble();
             }catch (Exception e) {
+                scanner.next();
                 System.out.println("Valor inválido, digite um valor válido.");
             }
         }

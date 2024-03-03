@@ -31,9 +31,15 @@ h=altura do corpo em movimento
 
 Entrada:
    -> Ângulo em relação ao solo
-   -> Velocidade
+   -> Velocidade incial
+   -> intervalo de tempo
 
 Resposta:
-   -> Velocidade   
-   -> Posição em tempos específicos 
+   -> Posição em tempos específicos
    
+Desconsiderar mass e resistência do ar, seguindo o princípio da equivalência. 
+
+-> Refatorar
+-> Testes unitários
+
+3) Analisar
