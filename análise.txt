@@ -5,14 +5,14 @@ Gravidade
    -> Velocidade
 
 Entrada:
-   -> Altura inicial do objeto   
+   -> Altura inicial do objeto
    -> Aceleração da gravidade (constante)
    -> Intervalo de tempo (1 metro)
 
 Resposta:
    -> Velocidade de queda *
    -> Posição em tempos específicos
-   
+
 
 v = g.t
 
@@ -36,10 +36,29 @@ Entrada:
 
 Resposta:
    -> Posição em tempos específicos
-   
+
 Desconsiderar mass e resistência do ar, seguindo o princípio da equivalência. 
 
 -> Refatorar
 -> Testes unitários
 
-3) Analisar
+3)
+
+Entrada:
+   -> Massa da particula 1
+   -> Massa da particula 2
+   -> Velocidade inicial da particula 1
+   -> Velocidade inicial da particula 2
+
+Resposta:
+   -> Velocidade final particula 1
+   -> Velocidade final particula 2
+
+((msPart1 - msPart2) / (msPart1 + msPart2)) * velPart1
+                + ((2 * msPart2) / (msPart1 + msPart2)) * velPart2
+
+((2 * msPart1) / (msPart1 + msPart2)) * velPart1 -
+                ((msPart1 - msPart2) / (msPart1 + msPart2)) * velPart2
+
+-> Refatorar
+-> Testes unitários
