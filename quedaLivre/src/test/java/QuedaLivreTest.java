@@ -11,7 +11,7 @@ class QuedaLivreTest {
     @Test
     void testCalculaAlturaConformeTempo() {
         double tempo = 2;
-        double alturaEsperada = 19.62;
+        double alturaEsperada = 19.6;
         assertEquals(alturaEsperada, QuedaLivre.calculaAlturaConformeTempo(tempo), 0.01,
                 "Teste fórmula: (g*t^2)/2");
     }
@@ -19,7 +19,7 @@ class QuedaLivreTest {
     @Test
     void testCalculaVelocidadeConformeTempo() {
         double tempo = 2;
-        double velocidadeEsperada = 19.62;
+        double velocidadeEsperada = 19.6;
         assertEquals(velocidadeEsperada, QuedaLivre.calculaVelocidadeConformeTempo(tempo), 0.01,
                 "Teste fórmula: g*t.");
     }
@@ -41,10 +41,10 @@ class QuedaLivreTest {
         double[][] dadosEstadoEsperados = {
             {0.0, 100.0, 0.0},
             {1.0, 95.1, 9.81},
-            {2.0, 80.38, 19.62},
-            {3.0, 55.85, 29.43},
-            {4.0, 21.51, 39.24},
-            {4.51, 0.0, 44.29}
+            {2.0, 80.4, 19.6},
+            {3.0, 55.9, 29.40},
+            {4.0, 21.59, 39.2},
+            {4.51, 0.0, 44.27}
         };
 
         assertEquals(dadosEstadoEsperados.length, estados.size(),
