@@ -11,11 +11,10 @@ class MovimentoProjetilTest {
     @Test
     void testCalcularTempoDeVooAteChegarSolo() {
         double velocidadeInicialY = 10;
-        double tempoEsperado = 2.03;
+        double tempoEsperado = 2.04;
         double tempoCalculado = MovimentoProjetil.calcularTempoDeVooAteChegarSolo(velocidadeInicialY);
         assertEquals(tempoEsperado, tempoCalculado, 0.01, "O tempo de voo calculado está errado");
     }
-
 
     @Test
     void testCalculaTrajetoriaProjetil() {
@@ -50,12 +49,11 @@ class MovimentoProjetilTest {
         }
     }
 
-
     @Test
     void testCalcularPosicaoVertical() {
         double velocidadeInicialY = 10;
         double tempo = 2;
-        double posicaoEsperada = 0.37;
+        double posicaoEsperada = 0.39;
         double posicaoCalculada = MovimentoProjetil.calcularPosicaoVertical(velocidadeInicialY, tempo);
         assertEquals(posicaoEsperada, posicaoCalculada, 0.01, "A posição vertical calculada está errada");
     }

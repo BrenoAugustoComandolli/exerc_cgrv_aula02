@@ -30,10 +30,17 @@ public class MovimentoProjetil {
         exibeTrajetoria(lEstados);
     }
 
+    /**
+     * Calcula a velocidade máxima que será atingida durante o tempo de voo até o solo
+     */
     public static double calcularTempoDeVooAteChegarSolo(double velocidadeInicialY) {
         return (2 * velocidadeInicialY) / AC_GRAVIDADE;
     }
 
+    /**
+     * Calcula a trajetória do projétil conforme a velocidade inicial, o intervalo de tempo e a velocidade,
+     * fazendo em looping para pegar cada estado e cada posição em um determinado período
+     */
     public static List<EstadoProjetil> calculaTrajetoriaProjetil(double tempoTotal, double intervaloTempo,
                                                                  double velocidadeInicialX, double velocidadeInicialY) {
         List<EstadoProjetil> lEstados = new ArrayList<>();
@@ -53,28 +60,39 @@ public class MovimentoProjetil {
         return lEstados;
     }
 
-    public static double calcularPosicaoVertical(double velocidadeInicialY, double i) {
-        return (velocidadeInicialY * i) - (AC_GRAVIDADE / 2) * Math.pow(i, 2);
-    }
-
-    public static double calcularPosicaoHorizontal(double velocidadeInicialX, double i) {
-        return velocidadeInicialX * i;
-    }
-
+    /**
+     * Calcula a componente vertical da velocidade do projétil, conforme a velocidade inicial e o ângulo
+     */
     public static double calculaComponenteVerticalVelocidade(double velocidadeInicial, double anguloRadianos) {
         return velocidadeInicial * Math.sin(anguloRadianos);
     }
 
+    /**
+     * Calcula a componente horizontal da velocidade do projétil, conforme a velocidade inicial e o ângulo
+     */
     public static double calculaComponenteHorizontalVelocidade(double velocidadeInicial, double anguloRadianos) {
         return velocidadeInicial * Math.cos(anguloRadianos);
     }
 
-    private static void exibeTrajetoria(List<EstadoProjetil> lEstados) {
-        for (EstadoProjetil posicao : lEstados) {
-            System.out.println(posicao);
-        }
+    /**
+     * Calcula a posição vertical do projétil conforme a velocidade inicial e o intervalo de tempo
+     * (Posição vertical em função do tempo)
+     */
+    public static double calcularPosicaoVertical(double velocidadeInicialY, double i) {
+        return (velocidadeInicialY * i) - (AC_GRAVIDADE / 2) * Math.pow(i, 2);
     }
 
+    /**
+     * Calcula a posição horizontal do projétil conforme a velocidade inicial e o intervalo de tempo
+     * (Posição horizontal em função do tempo)
+     */
+    public static double calcularPosicaoHorizontal(double velocidadeInicialX, double i) {
+        return velocidadeInicialX * i;
+    }
+
+    /**
+     * Retorna a velocidade inicial do projétil
+     */
     private static double getVelocidadeInicial(Scanner scanner) {
         double velocidadeInicial = -1;
 
@@ -90,6 +108,9 @@ public class MovimentoProjetil {
         return velocidadeInicial;
     }
 
+    /**
+     * Retorna o ângulo para as atualizações da queda
+     */
     private static double getAngulo(Scanner scanner) {
         double angulo = -1;
 
@@ -105,6 +126,9 @@ public class MovimentoProjetil {
         return angulo;
     }
 
+    /**
+     * Retorna o intervalo de tempo para as atualizações da queda
+     */
     private static double getIntervaloTempo(Scanner scanner) {
         double intervaloTempo = -1;
 
@@ -118,5 +142,14 @@ public class MovimentoProjetil {
             }
         }
         return intervaloTempo;
+    }
+
+    /**
+     * Exibe a trajetória do projétil conforme os estados da trajetória
+     */
+    private static void exibeTrajetoria(List<EstadoProjetil> lEstados) {
+        for (EstadoProjetil posicao : lEstados) {
+            System.out.println(posicao);
+        }
     }
 }
