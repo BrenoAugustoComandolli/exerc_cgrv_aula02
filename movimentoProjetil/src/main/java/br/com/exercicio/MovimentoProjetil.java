@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class MovimentoProjetil {
 
-    public static final double AC_GRAVIDADE = 9.81;
+    public static final double AC_GRAVIDADE = 9.80;
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
