@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class PenduloSimples {
 
-    public static final double AC_GRAVIDADE = 10;
+    public static final double AC_GRAVIDADE = 9.8;
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -18,15 +18,40 @@ public class PenduloSimples {
         double intervaloTempo = getIntervaloTempo(scanner);
         double comprimentoCorda = getComprimentoCorda(scanner);
 
-        double tempoInicial = 0;
-        double tempoFinal = 2 * Math.PI * Math.sqrt(comprimentoCorda / AC_GRAVIDADE);
+        double tempoFinal = calculaFrequenciaAngularPendulo(comprimentoCorda);
 
-        for(tempoInicial = 0; tempoInicial <= tempoFinal; tempoInicial += intervaloTempo) {
-            double posiçaoAngular = anguloRadianos * Math.cos(Math.sqrt(AC_GRAVIDADE / comprimentoCorda) * tempoInicial);
-            System.out.printf("Tempo: %.2f s, Posição Angular: %.4f radianos\n", tempoInicial, posiçaoAngular);
+        realizaCalculoPosicaoAngularIntervaloTempo(tempoFinal, intervaloTempo, anguloRadianos, comprimentoCorda);
+    }
+
+    /**
+     * Calcula a frequência angular do pêndulo
+     */
+    public static double calculaFrequenciaAngularPendulo(double comprimentoCorda) {
+        return 2 * Math.PI * Math.sqrt(comprimentoCorda / AC_GRAVIDADE);
+    }
+
+    /**
+     * Calcula a posição angular do pêndulo em graus, conforme tempo e o tamanho da corda
+     */
+    public static double calculaPosicaoAngularConformeTempo(double anguloRadianos, double comprimentoCorda, double tempoDeslocamento) {
+        return anguloRadianos * Math.cos(Math.sqrt(AC_GRAVIDADE / comprimentoCorda) * tempoDeslocamento);
+    }
+
+    /**
+     * Realiza o cálculo do tempo para completar uma ida e uma volta no pendulo, ou seja, o tempo total para
+     * chegar uma extremidade e se balançar até próximo a origem
+     */
+    private static void realizaCalculoPosicaoAngularIntervaloTempo(double tempoFinal, double intervaloTempo, double anguloRadianos, double comprimentoCorda) {
+        double tempoDeslocamento;
+        for(tempoDeslocamento = 0; tempoDeslocamento <= tempoFinal; tempoDeslocamento += intervaloTempo) {
+            double posicaoAngular = calculaPosicaoAngularConformeTempo(anguloRadianos, comprimentoCorda, tempoDeslocamento);
+            System.out.printf("Tempo: %.1f s, Ângulo: %.2f graus%n", tempoDeslocamento, Math.toDegrees(posicaoAngular));
         }
     }
 
+    /**
+     * Recupera o ângulo do pêndulo em graus
+     */
     private static double getAngulo(Scanner scanner) {
         double angulo = -1;
 
@@ -42,6 +67,9 @@ public class PenduloSimples {
         return angulo;
     }
 
+    /**
+     * Recupera o intervalo de tempo para as atualizações do deslocamento do pêndulo
+     */
     private static double getIntervaloTempo(Scanner scanner) {
         double intervaloTempo = -1;
 
@@ -57,6 +85,9 @@ public class PenduloSimples {
         return intervaloTempo;
     }
 
+    /**
+     * Recupera o comprimento da corda do pendulo
+     */
     private static double getComprimentoCorda(Scanner scanner) {
         double comprimentoCorda = -1;
 
