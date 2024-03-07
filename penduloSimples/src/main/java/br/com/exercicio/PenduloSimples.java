@@ -10,7 +10,9 @@ public class PenduloSimples {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("##Equação ordinária: Para este calculo será feito a verificação do tempo para completar uma ida e uma volta" +
-                "no pendulo, ou seja, o tempo total para chegar uma extremidade e se balançar até próximo a origem ##");
+                "no pendulo, ou seja, o tempo total para chegar uma extremidade e se balançar até próximo a origem. " +
+                "A massa do pêndulo não afeta o seu período de oscilação, é determinado apenas pelo comprimento da " +
+                "corda (ou do fio) e pela aceleração gravitacional local##");
 
         double angulo = getAngulo(scanner);
         double anguloRadianos = Math.toRadians(angulo);

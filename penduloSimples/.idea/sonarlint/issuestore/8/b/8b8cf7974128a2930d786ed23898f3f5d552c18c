@@ -1,12 +1,9 @@
 
-r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢ü­ıÿÿÿÿ8ıÙ«°á1
-G	java:S106"+Replace this use of System.out by a logger.(ÿ«š8ß’¼¯á1
-n
-java:S3457"Q%n should be used in place of \n to produce the platform-specific line separator.(¨˜Œß8¥ó«°á1
-G	java:S106"+Replace this use of System.out by a logger.(¨˜Œß8ÚÙ½¯á1
-L	java:S106#"+Replace this use of System.out by a logger.(Î­¯üÿÿÿÿÿ8ÜÙ½¯á1
-L	java:S106'"+Replace this use of System.out by a logger.(÷’±úÿÿÿÿ8ë—Ğ¯á1
-G	java:S1062"+Replace this use of System.out by a logger.(·Œû†8ë—Ğ¯á1
-G	java:S1066"+Replace this use of System.out by a logger.(‘ı¶©8÷¯á1
-L	java:S106A"+Replace this use of System.out by a logger.(—ÄôÈùÿÿÿÿ8÷¯á1
-G	java:S106E"+Replace this use of System.out by a logger.(‘ı¶©8Âœ…°á1
+G	java:S106"+Replace this use of System.out by a logger.(ÿ«š8¾óä×á1
+G	java:S1062"+Replace this use of System.out by a logger.(ß—·®8Åóä×á1
+L	java:S106>"+Replace this use of System.out by a logger.(Î­¯üÿÿÿÿÿ8Êóä×á1
+L	java:S106B"+Replace this use of System.out by a logger.(÷’±úÿÿÿÿ8Ëóä×á1
+G	java:S106P"+Replace this use of System.out by a logger.(·Œû†8Ö»å×á1
+G	java:S106T"+Replace this use of System.out by a logger.(‘ı¶©8Ù»å×á1
+L	java:S106b"+Replace this use of System.out by a logger.(—ÄôÈùÿÿÿÿ8¢©õ×á1
+G	java:S106f"+Replace this use of System.out by a logger.(‘ı¶©8¬½ø×á1
